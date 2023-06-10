@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Releases</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/download.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/download.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Available Releases</h1>
+    </header>
+
+    <div class="releases">
+      <div id="latest-releases" class="section">
+        <h2>Latest Release</h2>
+        <div id="latest-downloads" class="release-list"></div>
+      </div>
+      <div class="toggle-button-container">
+        <button id="toggle-button" class="toggle-button">Show Older Builds</button>
+      </div>
+      <div id="older-releases" class="hidden">
+        <h2>Older Builds</h2>
+        <div id="older-downloads" class="release-list"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
