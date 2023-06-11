@@ -12,7 +12,7 @@ $(document).ready(function () {
           description: release.body,
           downloadUrl: release.assets.length > 0 ? release.assets[0].browser_download_url : null,
           isPrerelease: release.prerelease,
-          commitHash: ""
+          commitHash: release.target_commitish
         };
       });
 
@@ -21,28 +21,7 @@ $(document).ready(function () {
         return new Date(b.published_at) - new Date(a.published_at);
       });
 
-      // Fetch commit hash for each release
-      fetchCommitHash(releases, 0);
-    });
-  }
-
-  // Function to fetch commit hash for each release
-  function fetchCommitHash(releases, index) {
-    if (index >= releases.length) {
       displayReleases(releases);
-      return;
-    }
-
-    var release = releases[index];
-    var commitsApiUrl = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/commits";
-
-    $.getJSON(commitsApiUrl, function (data) {
-      if (data.length > 0) {
-        var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
-        release.commitHash = commitHash;
-      }
-
-      fetchCommitHash(releases, index + 1);
     });
   }
 
