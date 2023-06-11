@@ -4,22 +4,22 @@ $(document).ready(function () {
   var apiUrl = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/releases";
 
   // Function to fetch commit hash for a specific release
-  function fetchCommitHash(release, index) {
-    if (index >= release.length) {
-      displayReleases(release);
+  function fetchCommitHash(releases, index) {
+    if (index >= releases.length) {
+      displayReleases(releases);
       return;
     }
 
-    var releaseItem = release[index];
-    var commitApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?sha=${releaseItem.name}`;
+    var release = releases[index];
+    var commitsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits`;
 
-    $.getJSON(commitApiUrl, function (data) {
+    $.getJSON(commitsApiUrl, { sha: release.name }, function (data) {
       if (data.length > 0) {
         var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
-        releaseItem.commitHash = commitHash;
+        release.commitHash = commitHash;
       }
 
-      fetchCommitHash(release, index + 1);
+      fetchCommitHash(releases, index + 1);
     });
   }
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
     if (latestRelease) {
       var releaseTitle = latestRelease.name;
       if (latestRelease.isPrerelease) {
-        releaseTitle = `${releaseTitle}`;
+        releaseTitle = `<i class="fas fa-flask"></i> ${releaseTitle}`;
       }
       var releaseHash = `"${latestRelease.commitHash}"`;
 
@@ -76,7 +76,7 @@ $(document).ready(function () {
       return !release.isPrerelease;
     });
 
-    olderReleases.slice(1).forEach(function (release) {
+    olderReleases.forEach(function (release) {
       var releaseTitle = release.name;
       if (release.isPrerelease) {
         releaseTitle = `<i class="fas fa-flask"></i> ${releaseTitle}`;
