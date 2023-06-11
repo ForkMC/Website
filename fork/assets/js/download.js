@@ -16,7 +16,7 @@ $(document).ready(function () {
     $.getJSON(commitsApiUrl, { sha: release.name }, function (data) {
       if (data.length > 0) {
         var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
-        release.commitHash = commitHash;
+        release.commit.html_url = commitHash;
       }
 
       fetchCommitHash(releases, index + 1);
