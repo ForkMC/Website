@@ -16,7 +16,7 @@ $(document).ready(function () {
      $.getJSON(commitsApiUrl, { sha: release.commit.html_url }, function (data) {
        if (data.length > 0) {
          var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
-         release.commit.html_url = commitHash;
+         release.commitHash = commitHash;
        }
 
        fetchCommitHash(releases, index + 1);
@@ -57,9 +57,10 @@ $(document).ready(function () {
        var releaseTitle = `"git-Fork-${latestRelease.commitHash}"`;
        var releaseHTML = `
          <div class="release-item">
-           <p class="commit-hash"><i class="fas fa-check"></i> ${releaseTitle}</p>
-           <p class="release-description">${latestRelease.description}</p>
-           <a href="${latestRelease.downloadUrl}" class="download-button">Download</a>
+            <p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${latestRelease.commitHash}</p>
+            <h3 class="release-title">${releaseTitle}</h3>
+            <p class="release-description">${latestRelease.description}</p>
+            <a href="${latestRelease.downloadUrl}" class="download-button">Download</a>
          </div>
        `;
        $("#latest-downloads").append(releaseHTML);
@@ -74,9 +75,10 @@ $(document).ready(function () {
        var releaseTitle = `"git-Fork-${release.commitHash}"`;
        var releaseHTML = `
          <div class="release-item older-build">
-           <p class="commit-hash"><i class="fas fa-check"></i> ${releaseTitle}</p>
-           <p class="release-description">${release.description}</p>
-           <a href="${release.downloadUrl}" class="download-button">Download</a>
+            <p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${release.commitHash}</p>
+            <h3 class="release-title">${releaseTitle}</h3>
+            <p class="release-description">${release.description}</p>
+            <a href="${release.downloadUrl}" class="download-button">Download</a>
          </div>
        `;
        $("#older-downloads").append(releaseHTML);
@@ -91,9 +93,10 @@ $(document).ready(function () {
        var releaseTitle = `"git-Fork-${release.commitHash}"`;
        var releaseHTML = `
          <div class="release-item">
-           <p class="commit-hash-experimental"><i class="fas fa-exclamation-triangle"></i> ${releaseTitle}</p>
-           <p class="release-description">${release.description}</p>
-           <a href="${release.downloadUrl}" class="download-button">Download</a>
+            <p class="commit-hash-experimental"><i class="fas fa-exclamation-triangle"></i> git-Fork-${release.commitHash}</p>
+            <h3 class="release-title">${releaseTitle}</h3>
+            <p class="release-description">${release.description}</p>
+            <a href="${release.downloadUrl}" class="download-button">Download</a>
          </div>
        `;
        $("#experimental-downloads").append(releaseHTML);
