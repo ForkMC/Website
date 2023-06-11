@@ -7,12 +7,13 @@ $(document).ready(function () {
   function loadReleases() {
     $.getJSON(apiUrl, function (data) {
       var releases = data.map(function (release) {
+        var commitHash = release.target_commitish.slice(0, 7); // Get the first 7 characters of the commit hash
         return {
           name: release.name,
           description: release.body,
           downloadUrl: release.assets.length > 0 ? release.assets[0].browser_download_url : null,
           isPrerelease: release.prerelease,
-          commitHash: release.target_commitish
+          commitHash: commitHash
         };
       });
 
