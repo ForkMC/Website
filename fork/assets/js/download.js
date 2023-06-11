@@ -13,7 +13,7 @@ $(document).ready(function () {
     var release = releases[index];
     var commitsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits`;
 
-    $.getJSON(commitsApiUrl, { sha: release.name }, function (data) {
+    $.getJSON(commitsApiUrl, { sha: release.commit.html_url }, function (data) {
       if (data.length > 0) {
         var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
         release.commit.html_url = commitHash;
