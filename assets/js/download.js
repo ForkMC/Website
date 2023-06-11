@@ -84,7 +84,7 @@ $(document).ready(function () {
         var releaseHash = `"${release.commitHash}"`;
   
         var releaseHTML = `
-          <div class="release-item">
+          <div class="release-item older-build">
             <p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>
             <h3 class="release-title">${releaseTitle}</h3>
             <p class="release-description">${release.description}</p>
@@ -113,6 +113,10 @@ $(document).ready(function () {
         `;
         $("#experimental-downloads").append(releaseHTML);
       });
+  
+      // Hide older builds initially
+      $(".older-build").hide();
+      $(".hide-button").hide();
     }
   
     loadReleases();
@@ -125,4 +129,21 @@ $(document).ready(function () {
       $(".content").hide();
       $("#" + tabId.replace("-tab", "-content")).show();
     });
-  });
+  
+    // Show older builds
+    $(".show-button").on("click", function () {
+        $("#older-releases h2").show();
+        $("#older-releases .older-build").show();
+        $(".show-button").hide();
+        $(".hide-button").show();
+    });
+    
+    // Hide older builds
+    $(".hide-button").on("click", function () {
+        $("#older-releases h2").hide();
+        $("#older-releases .older-build").hide();
+        $(".hide-button").hide();
+        $(".show-button").show();
+    });    
+});
+  

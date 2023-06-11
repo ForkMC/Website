@@ -3,19 +3,19 @@
 <head>
   <title>GitHub Releases</title>
   <link rel="stylesheet" type="text/css" href="assets/css/download.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div class="container">
     <div class="tabs">
-        <div class="tab active" id="releases-tab">
-          <i class="fas fa-check-circle"></i> Releases
-        </div>
-        <div class="tab" id="experimental-tab">
-          <i class="fas fa-exclamation-triangle"></i> Experimental Builds
-        </div>
+      <div class="tab active" id="releases-tab">
+        <i class="fas fa-check-circle"></i> Releases
       </div>
-      
+      <div class="tab" id="experimental-tab">
+        <i class="fas fa-exclamation-triangle"></i> Experimental Builds
+      </div>
+    </div>
 
     <div class="content active" id="releases-content">
       <div id="latest-releases" class="section">
@@ -25,6 +25,10 @@
       <div id="older-releases" class="section">
         <h2>Older Builds</h2>
         <div id="older-downloads" class="release-list"></div>
+        <div id="older-builds-toggle">
+          <button class="show-button">Show Older Builds</button>
+          <button class="hide-button">Hide Older Builds</button>
+        </div>
       </div>
     </div>
 
@@ -32,10 +36,10 @@
       <div id="experimental-builds" class="section">
         <h2>Experimental Builds</h2>
         <div class="warning-box release-item">
-            <h3 class="release-title"><i class="fas fa-exclamation-triangle"></i> Warning</h3>
-            <p class="release-description">These are experimental builds and should not be used in production. Remember to always make backups of worlds.</p>
-          </div>
-          <div id="experimental-downloads" class="release-list"></div>
+          <h3 class="release-title"><i class="fas fa-exclamation-triangle"></i> Warning</h3>
+          <p class="release-description">These are experimental builds and should not be used in production. Remember to always make backups of worlds.</p>
+        </div>
+        <div id="experimental-downloads" class="release-list"></div>
       </div>
     </div>
   </div>
