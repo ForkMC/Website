@@ -1,152 +1,151 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #1f1f1f;
-    color: #c9d1d9;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .tab {
-    padding: 10px 20px;
-    background-color: #2c974b;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .tab.active {
-    background-color: #1e6632;
-  }
-  
-  .content {
-    display: none;
-  }
-  
-  .content.active {
-    display: block;
-  }
-  
-  .release-item {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: #2d2d2d;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .release-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #c9d1d9;
-  }
-  
-  .release-description {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #c9d1d9;
-  }
-  
-  .download-button,
-  .show-button,
-  .hide-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2ea44f;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-  }
-  
-  .download-button:hover,
-  .show-button:hover,
-  .hide-button:hover {
-    background-color: #2c974b;
-  }
-  
-  .warning-box {
-    background-color: #ffd33d;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-  }
-  
-  .warning-box .release-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    color: #1f1f1f;
-  }
-  
-  .warning-box .release-title i {
-    color: #1f1f1f;
-    margin-right: 10px;
-  }
-  
-  .warning-box .release-description {
-    font-size: 16px;
-    margin-bottom: 10px;
-    line-height: 1.4;
-    color: #1f1f1f;
-  }
-  
-  .commit-hash {
-    color: #33FF99;
-    font-size: 18px;
-  }
-  
-  .commit-hash-experimental {
-    color: #ffd33d;
-    font-size: 18px;
-  }
-  
-  #older-releases h2 {
-    display: none;
-  }
-  
-  #older-builds-toggle {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .show-button,
-  .hide-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2ea44f;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-  }
-  
-  .show-button:hover,
-  .hide-button:hover {
-    background-color: #2c974b;
-  }
-  
-  .older-build {
-    display: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1f1f1f;
+  color: #c9d1d9;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #2c974b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #1e6632;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.release-item {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #2d2d2d;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.release-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #c9d1d9;
+}
+
+.release-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #c9d1d9;
+}
+
+.download-button,
+.show-button,
+.hide-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ea44f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.download-button:hover,
+.show-button:hover,
+.hide-button:hover {
+  background-color: #2c974b;
+}
+
+.warning-box {
+  background-color: #ffd33d;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.warning-box .release-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #1f1f1f;
+}
+
+.warning-box .release-title i {
+  color: #1f1f1f;
+  margin-right: 10px;
+}
+
+.warning-box .release-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  color: #1f1f1f;
+}
+
+.commit-hash {
+  color: #33FF99;
+  font-size: 20px;
+}
+
+.commit-hash-experimental {
+  color: #ffd33d;
+  font-size: 18px;
+}
+
+#older-releases h2 {
+  display: none;
+}
+
+#older-builds-toggle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.show-button,
+.hide-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ea44f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.show-button:hover,
+.hide-button:hover {
+  background-color: #2c974b;
+}
+
+.older-build {
+  display: none;
+}
