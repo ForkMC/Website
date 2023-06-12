@@ -64,7 +64,7 @@ function fetchCommitHash(releases, index) {
         var releaseHTML = `
           <div class="release-item">
             <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
-            <p class="commit-hash"><i class="fas fa-check"></i> Stable</p>
+            <p class="commit-hash"><i class="fas fa-check"></i> Stable Build</p>
             <h3 class="release-title">${releaseTitle}</h3>
             <p class="release-description">${latestRelease.description}</p>
             <a href="${latestRelease.downloadUrl}" class="download-button">Download</a>
@@ -88,7 +88,7 @@ function fetchCommitHash(releases, index) {
         var releaseHTML = `
           <div class="release-item older-build">
           <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
-            <p class="commit-hash"><i class="fas fa-check"></i> Stable</p>
+            <p class="commit-hash"><i class="fas fa-check"></i> Stable Build</p>
             <h3 class="release-title">${releaseTitle}</h3>
             <p class="release-description">${release.description}</p>
             <a href="${release.downloadUrl}" class="download-button">Download</a>
