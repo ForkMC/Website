@@ -12,7 +12,7 @@ $(document).ready(function () {
             description: release.body,
             downloadUrl: release.assets.length > 0 ? release.assets[0].browser_download_url : null,
             isPrerelease: release.prerelease,
-            commitHash: ""
+            commitHash: "",
           };
         });
   
@@ -27,25 +27,26 @@ $(document).ready(function () {
     }
   
     // Function to fetch commit hash for each release
-    function fetchCommitHash(releases, index) {
-      if (index >= releases.length) {
-        displayReleases(releases);
-        return;
-      }
-  
-      var release = releases[index];
-      var commitsApiUrl = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/commits";
-  
-      $.getJSON(commitsApiUrl, function (data) {
-        if (data.length > 0) {
-          var commitHash = data[0].sha.slice(0, 7); // Get the first 7 characters of the commit hash
-          release.commitHash = commitHash;
-        }
-  
-        fetchCommitHash(releases, index + 1);
-      });
+function fetchCommitHash(releases, index) {
+  if (index >= releases.length) {
+    displayReleases(releases);
+    return;
+  }
+
+  var release = releases[index];
+  var tagsApiUrl = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/tags";
+
+  $.getJSON(tagsApiUrl, function (data) {
+    if (data.length > 0) {
+      var tag = data[0];
+      var commitHash = tag.commit.sha.slice(0, 7); // Get the first 7 characters of the commit hash
+      release.commitHash = commitHash;
     }
-  
+
+    fetchCommitHash(releases, index + 1);
+  });
+}
+
     // Function to display releases
     function displayReleases(releases) {
       // Display latest release
@@ -62,7 +63,8 @@ $(document).ready(function () {
   
         var releaseHTML = `
           <div class="release-item">
-            <p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>
+            <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
+            <p class="commit-hash"><i class="fas fa-check"></i> Stable</p>
             <h3 class="release-title">${releaseTitle}</h3>
             <p class="release-description">${latestRelease.description}</p>
             <a href="${latestRelease.downloadUrl}" class="download-button">Download</a>
@@ -85,7 +87,8 @@ $(document).ready(function () {
   
         var releaseHTML = `
           <div class="release-item older-build">
-            <p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>
+          <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
+            <p class="commit-hash"><i class="fas fa-check"></i> Stable</p>
             <h3 class="release-title">${releaseTitle}</h3>
             <p class="release-description">${release.description}</p>
             <a href="${release.downloadUrl}" class="download-button">Download</a>
