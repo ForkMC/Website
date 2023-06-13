@@ -86,7 +86,7 @@ $(document).ready(function () {
         <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
         <p class="commit-hash"><i class="fas fa-check-circle"></i> Stable Build</p>
         <h3 class="release-title">${releaseTitle}</h3>
-        <p class="release-description">${release.description}</p>
+        <!--<p class="release-description">${release.description}</p>-->
         <a href="${release.downloadUrl}" class="download-button">Download</a>
       </div>
     `;
@@ -108,7 +108,7 @@ $(document).ready(function () {
         <div class="release-item">
           <p class="commit-hash-experimental"><i class="fas fa-exclamation-triangle"></i> git-Fork-${releaseHash}</p>
           <h3 class="release-title">${releaseTitle}</h3>
-          <p class="release-description">${release.description}</p>
+          <!--<p class="release-description">${release.description}</p>-->
           <a href="${release.downloadUrl}" class="download-button">Download</a>
         </div>
       `;
