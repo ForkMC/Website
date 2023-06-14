@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #1f1f1f;
   color: #c9d1d9;
 }
@@ -19,7 +23,6 @@ body {
 .tabs {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -28,8 +31,9 @@ body {
   background-color: #2c974b;
   color: #fff;
   cursor: pointer;
-  border-radius: 6px 6px 0 0;
+  border-radius: 8px;
   margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .tab.active {
@@ -50,20 +54,24 @@ body {
   margin: 0 auto;
   padding: 20px;
   background-color: #2d2d2d;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
 .release-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .release-description {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
+  line-height: 1.4;
+  color: #c9d1d9;
 }
 
 .download-button,
@@ -74,29 +82,30 @@ body {
   background-color: #2ea44f;
   color: #fff;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   outline: none;
   border: none;
   margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .download-button:hover,
 .show-button:hover,
 .hide-button:hover {
-  background-color: #2c974b;
+  background-color: #1e9440;
 }
 
 .warning-box {
   background-color: #ffd33d;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
 
 .warning-box .release-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
   display: flex;
@@ -110,7 +119,7 @@ body {
 }
 
 .warning-box .release-description {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
   line-height: 1.4;
   color: #1f1f1f;
@@ -118,12 +127,12 @@ body {
 
 .commit-hash {
   color: #33FF99;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .commit-hash-experimental {
   color: #ffd33d;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 #older-releases h2 {
@@ -138,6 +147,7 @@ body {
 .show-button,
 .hide-button {
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 .show-button {
@@ -153,7 +163,7 @@ body {
 .hide-button {
   color: #fff;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   outline: none;
   border: none;
@@ -161,7 +171,7 @@ body {
 
 .show-button:hover,
 .hide-button:hover {
-  background-color: #2c974b;
+  background-color: #1e9440;
 }
 
 .older-build {
