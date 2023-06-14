@@ -177,3 +177,7 @@ body {
 .older-build {
   display: none;
 }
+
+.button-space {
+  margin-right: 10px;
+}

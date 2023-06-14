@@ -88,6 +88,8 @@ $(document).ready(function () {
         <h3 class="release-title">${releaseTitle}</h3>
         <!--<p class="release-description">${release.description}</p>-->
         <a href="${release.downloadUrl}" class="download-button">Download</a>
+        <span class="button-space"></span>
+        <a href="https://github.com/ForkMC/Fork/releases/latest" class="download-button">Release Notes</a>
       </div>
     `;
     $("#latest-downloads").append(releaseHTML);
