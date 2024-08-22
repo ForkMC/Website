@@ -79,12 +79,12 @@ $(document).ready(function () {
   // Function to display latest release
   function displayLatestRelease(release) {
     var releaseTitle = release.name;
-    var releaseHash = `"${release.commitHash}"`;
+    var releaseHash = `${release.commitHash}`;
 
     var releaseHTML = `
       <div class="release-item">
-        <!--<p class="commit-hash"><i class="fas fa-check"></i> git-Fork-${releaseHash}</p>-->
-        <p class="commit-hash"><i class="fas fa-check-circle"></i> Stable Build</p>
+        <p class="commit-hash"><i class="fas fa-hashtag"></i> git-Fork-${releaseHash}</p>
+        <p class="commit-stable"><i class="fas fa-check-circle"></i> Stable Build</p>
         <h3 class="release-title">${releaseTitle}</h3>
         <!--<p class="release-description">${release.description}</p>-->
         <a href="${release.downloadUrl}" class="download-button">Download</a>
@@ -104,7 +104,7 @@ $(document).ready(function () {
 
     experimentalReleases.forEach(function (release) {
       var releaseTitle = release.name;
-      var releaseHash = `"${release.commitHash}"`;
+      var releaseHash = `${release.commitHash}`;
 
       var releaseHTML = `
         <div class="release-item">
