@@ -108,7 +108,7 @@ $(document).ready(function () {
 
       var releaseHTML = `
         <div class="release-item">
-          <p class="commit-hash-experimental"><i class="fas fa-exclamation-triangle"></i> git-Fork-${releaseHash}</p>
+          <p class="commit-hash-experimental"><i class="fas fa-exclamation-triangle"></i> git-Fork-EXP</p>
           <h3 class="release-title">${releaseTitle}</h3>
           <!--<p class="release-description">${release.description}</p>-->
           <a href="${release.downloadUrl}" class="download-button">Download</a>
